@@ -39,6 +39,10 @@ macro(app_set_runner_args)
   endif()
 endmacro()
 
+# Find custom boards
+# TODO: use Cmake variable to determine project root
+list(APPEND BOARD_ROOT ${CMAKE_CURRENT_SOURCE_DIR}/../../../..)
+
 # find_package(Zephyr) in order to load application boilerplate:
 # http://docs.zephyrproject.org/application/application.html
 find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
